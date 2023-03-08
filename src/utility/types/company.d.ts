@@ -1,0 +1,3 @@
+interface Company {
+  name: string;
+}
