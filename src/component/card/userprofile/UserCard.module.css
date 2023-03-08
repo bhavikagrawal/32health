@@ -1,0 +1,24 @@
+.card-img-wrapper {
+  height: 200px;
+  width: 200px;
+  background-color: #f5f5f5;
+  position: relative;
+}
+.card-img {
+  background-color: #f5f5f5;
+}
+
+.card {
+  margin: 15px;
+  border-radius: 0;
+}
+
+.card .ant-card-cover {
+  margin: 0;
+}
+
+.name {
+  color: rgba(0, 0, 0, 0.85);
+  margin-bottom: 0.5em;
+  font-weight: 500;
+}
