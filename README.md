@@ -25,4 +25,4 @@ npm run build
 
 ## Deployment
 
-Integration is done on vercel and is manual right now.
+Integration is done on vercel and is build is triggered automatically once a change is pushed to main branch
