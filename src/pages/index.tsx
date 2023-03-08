@@ -1,8 +1,13 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import { Col, Row } from "antd";
 import { Loader } from "@/component/loader/Loader";
 
+const UserCard = dynamic(
+  () => import("@/component/card/userprofile/UserCard"),
+  { ssr: false }
+);
 
 export default function Home() {
   const [users, setUsers] = useState<User[]>();
@@ -16,6 +21,21 @@ export default function Home() {
     })();
   }, []);
 
+  const onEditComplete = (user: User) => {
+    setUsers(
+      users?.map((usr) => {
+        return usr.id === user.id ? user : usr;
+      })
+    );
+  };
+  const onDelete = (user: User) => {
+    setUsers(
+      users?.filter((usr) => {
+        return usr.id !== user.id;
+      })
+    );
+  };
+
   if (loading) return <Loader />;
   return (
     <>
@@ -28,7 +48,11 @@ export default function Home() {
       <Row>
         {users?.map((user) => (
           <Col key={user.id} xs={24} sm={24} md={8} lg={8} xl={6}>
-            {user.id}
+            <UserCard
+              user={user}
+              updateUser={onEditComplete}
+              deleteUser={onDelete}
+            />
           </Col>
         ))}
       </Row>
