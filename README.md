@@ -2,8 +2,8 @@
 Project shows list of profiles and allow to modify and delete profiles.
 
 ## Technologies
-Next JS
-Typescript
+* Next JS
+* Typescript
 
 ## Getting Started
 
@@ -16,7 +16,7 @@ run the prod server:
 
 ```bash
 npm start
-```3
+```
 run the build:
 
 ```bash
